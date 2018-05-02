@@ -1,5 +1,6 @@
 package guru.springframework.spring5rest.services;
 
+import guru.springframework.spring5rest.api.v1.CustomerController;
 import guru.springframework.spring5rest.api.v1.mapper.CustomerMapper;
 import guru.springframework.spring5rest.api.v1.model.CustomerDTO;
 import guru.springframework.spring5rest.domain.Customer;
@@ -92,7 +93,7 @@ public class CustomerServiceImplTest {
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
-        assertEquals("/api/v1/customers/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDto.getCustomerUrl());
     }
 
     @Test
@@ -113,7 +114,7 @@ public class CustomerServiceImplTest {
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
-        assertEquals("/api/v1/customers/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDto.getCustomerUrl());
     }
 
     @Test
